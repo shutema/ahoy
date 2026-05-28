@@ -1,6 +1,7 @@
 name: Ahoy Development
 
 on:
+  workflow_dispatch:
   push:
     branches: development*
     paths-ignore:
