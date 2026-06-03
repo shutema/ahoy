@@ -346,6 +346,9 @@ class NrfRadio : public Radio {
                                     isLastPackage = (p.packet[9] > 0x10);                // > 0x10 indicates last packet received
                                 else if ((p.packet[0] != 0x88) && (p.packet[0] != 0x92)) // ignore MI status messages //#0 was p.packet[0] != 0x00 &&
                                     isLastPackage = true;                                // response from dev control command
+                                    // --- CUSTOM GAP INSERTION By MS ---
+                                    // Give the Gen 1 inverter time to process the data block before we fire the close command
+                                    delay(50); 
                             }
                             rx_ready = true; //reset in case we first read messages from other inverter or ACK zero payloads
                         }
