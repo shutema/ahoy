@@ -377,7 +377,7 @@ class NrfRadio : public Radio {
                     DBGPRINTLN("ms");
                 }*/
 
-                Delay(150); //MS Try a delay here before sending a packet
+                delay(150); //MS Try a delay here before sending a packet
                 
                 DPRINT_IVID(DBG_INFO, iv->id);
                 DBGPRINT(F("TX "));
